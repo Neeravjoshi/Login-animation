@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- tab login -->
+    <section>
+        <div class="tab-log-main">
+            <ul>
+                <li class="sign-bt active patch">Sign in</li>
+                <li class="signup-bt">Sign Up</li>
+                <li class="reset-bt">Reset</li>
+            </ul>
+            
+            <form>
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password" class="pass-txt">
+                <input type="password" placeholder="Repeat Password" class="rst-input">
+
+                <button></button>
+            </form>
+        </div>
+    </section>
+    <!-- tab login -->
+
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+
+        $('.sign-bt').click(function(){
+            $('ul li').removeClass('active');
+            $('ul li').removeClass('patch');
+            $(this).addClass('active');
+            $('.rst-input').slideUp();
+            $('.pass-txt').slideDown();
+            $(this).addClass('patch');
+            $('form button').removeClass('sgn-up');
+            $('form button').removeClass('res-up');
+        });
+
+        $('.signup-bt').click(function(){
+            $('ul li').removeClass('active');
+            $('ul li').removeClass('patch');
+            $(this).addClass('active');
+            $('.rst-input').slideDown();
+            $('.pass-txt').slideDown();
+            $(this).addClass('patch');
+            $('form button').addClass('sgn-up');
+            $('form button').removeClass('res-up');
+
+        });
+
+        $('.reset-bt').click(function(){
+            $('ul li').removeClass('active');
+            $('ul li').removeClass('patch');
+            $(this).addClass('active');
+            $('.rst-input').slideUp();
+            $('.pass-txt').slideUp();
+            $(this).addClass('patch');
+            $('form button').addClass('res-up');
+            $('form button').removeClass('sgn-up');
+        });
+    </script>
+</body>
+</html>
